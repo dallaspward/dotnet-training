@@ -4,3 +4,6 @@
 
 # vagrant
 **/.vagrant/
+
+# vscode
+**/.vscode/
