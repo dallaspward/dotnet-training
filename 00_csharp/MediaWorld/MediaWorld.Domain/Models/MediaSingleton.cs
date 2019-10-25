@@ -13,5 +13,10 @@ namespace MediaWorld.Domain.Models
     {
       return _instance;
     }
+
+    public void Play(Music m)
+    {
+      System.Console.WriteLine(m);
+    }
   }
 }

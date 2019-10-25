@@ -19,5 +19,10 @@ namespace MediaWorld.Domain.Models
       Genre = "R&B";
       Duration = new TimeSpan(0,5,0);
     }
+
+    public override string ToString()
+    {
+      return $"{Artist} {Title}";
+    }
   }
 }

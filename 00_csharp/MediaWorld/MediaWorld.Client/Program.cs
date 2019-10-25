@@ -13,15 +13,17 @@ namespace MediaWorld.Client
       /// </summary>
         private static void Main()
         {
-          var helper = MediaPlayerSingleton.GetInstance();
-          // var helper2 = new MediaSingleton();
-          System.Console.WriteLine(helper);
+          Play();
         }
 
-        private static void DisplayMusic()
+        private static void Play()
         {
-          Music m = new Song();
-          m.Artist;
+          var mediaPlayer = MediaPlayerSingleton.GetInstance();
+          Music s = new Song();
+          Music a = new Audible();
+
+          mediaPlayer.Play(s);
+          mediaPlayer.Play(a);
         }
     }
 }
