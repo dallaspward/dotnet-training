@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MediaWorld.Domain\MediaWorld.Domain.csproj" />
+    <ProjectReference Include="..\MediaWorld.Storing\MediaWorld.Storing.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
