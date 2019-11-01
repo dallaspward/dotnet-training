@@ -21,7 +21,7 @@ namespace MediaWorld.Client
         
     private static MediaRepository _repository = new MediaRepository();
 
-    private static async void Main()
+    private static void Main()
         {
           //should start logger at the beginning of program
           var program = new Program(); //must do this because main is static, either make ApplicationStart static (which requires anything that uses it to be static) or make a program object as <---
