@@ -10,6 +10,8 @@ namespace MediaWorld.Domain.Abstracts
     public System.TimeSpan Duration { get; set; }
     public string Title { get; set; }
 
+    public int frameRate {get; set; }
+
     public abstract bool Forward();
 
     public virtual bool Pause()
@@ -27,7 +29,7 @@ namespace MediaWorld.Domain.Abstracts
 
       while(count < 10)
       {
-        Thread.Sleep(2000);
+        //Thread.Sleep(2000);
         ResultEvent(this);
         count++;
       }

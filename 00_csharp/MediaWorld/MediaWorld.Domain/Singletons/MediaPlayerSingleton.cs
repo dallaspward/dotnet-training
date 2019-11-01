@@ -27,7 +27,7 @@ namespace MediaWorld.Domain.Singletons
     
     public void Execute(ButtonDelegate button, AMedia media)
     {
-      media.ResultEvent += ResultHandler;
+      media.ResultEvent += ResultHandler; //this works because the signature of ResultHandler fits the requirements of ResultEvent (returns nothing and takes AMedia as argument)
       button();
     }
 

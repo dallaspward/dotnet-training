@@ -1,0 +1,2 @@
+namespace MediaWorld.Testing.Specs
+{}
