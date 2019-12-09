@@ -1,6 +1,6 @@
 name: $(date:yyyymmdd)$(rev:.rr) #20191209.1000000000000
 
-triggers:
+trigger:
   - master
 
 stages:
@@ -12,7 +12,3 @@ stages:
         steps:
           - script: |
             dotnet build 3_devops/Devops.sln
-  # - stage: test
-  # - stage: pack
-  # - stage: deploy
-
