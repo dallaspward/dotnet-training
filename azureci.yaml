@@ -11,4 +11,4 @@ stages:
           vmImage: ubuntu-18.04
         steps:
           - script: |
-            dotnet build 3_devops/Devops.sln
+              dotnet build 3_devops/Devops.sln
