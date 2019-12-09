@@ -7,6 +7,5 @@ namespace MediaWorld.Domain.Interfaces
     bool Pause();
     bool Rewind();
     bool Stop();    
-    bool Stop();
   }
 }

@@ -1,0 +1,16 @@
+{
+  "name": "Webstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "start": "http-server -p 5000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,66 @@
+/* *{
+  box-sizing: border-box;
+  /* display: inline-block; */
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+/* .box::after{
+  content: '';
+  display: table;
+  clear: both;
+} */
+
+.col-1 {
+  width: 8.333%
+}
+
+.col-2 {
+  width: 16.667%
+}
+
+.col-3 {
+  width: 25%
+}
+
+.col-4 {
+  width: 
+}
+
+.col-5 {
+  width: 
+}
+
+.col-6 {
+  width: 
+}
+
+.col-7 {
+  width: 
+}
+
+.col-8 {
+  width: 
+}
+
+.col-9 {
+  width: 
+}
+
+.col-10 {
+  width: 
+}
+
+.col-11 {
+  width: 
+}
+
+.col-12 {
+  width: 
+} */

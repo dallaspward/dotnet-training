@@ -1,0 +1,65 @@
+﻿@model PizzaBox.Client.Models.Pizza
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Name</h1>
+    <h1 class="display-4">@ViewData["Name"]</h1>
+    <h1 class="display-4">@TempData["Name"]</h1>
+    @if(ViewBag.Pizza != null)
+    {
+      <h1 class="display-4">@ViewBag.Pizza.Crust</h1>
+      <h1 class="display-4">@ViewBag.Pizza.Size</h1>
+    }
+    
+    <!-- <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> -->
+</div>
+
+<!-- <form action="/home/order" method="post">
+  @foreach(var c in Model.Crusts)
+  {
+    <input type="radio" name="crust" value="@c"/>
+    <label>@c</label>
+  }
+
+  @foreach(var s in Model.Sizes)
+  {
+    <input type="radio" name="size" value="@s"/>
+    <label>@s</label>
+  }
+
+  <input type="submit" value="order" />
+</form> -->
+
+<!-- recreating above with html helpers -->
+
+@using (Html.BeginForm("order", "home", "post"))
+{
+  @Html.AntiForgeryToken()
+  foreach(var c in Model.Crusts)
+  {
+    @Html.RadioButtonFor(m => m.Crust, @c)
+    @Html.LabelFor(m => m.Crust, @c)
+  }
+  @Html.ValidationMessageFor(m => m.Crust)
+  
+  foreach(var s in Model.Sizes)
+  {
+    @Html.RadioButtonFor(m => m.Size, @s)
+    @Html.LabelFor(m => m.Size, @s)
+  }
+  @Html.ValidationMessageFor(m => m.Size)
+  
+  @Html.LabelFor(m => m.Quantity)
+  @Html.TextBoxFor(m => m.Quantity)
+  @Html.ValidationMessageFor(m => m.Quantity)
+
+  @Html.LabelFor(m => m.Name)
+  @Html.TextBoxFor(m => m.Name)
+  @Html.ValidationMessageFor(m => m.Name)
+  
+  <input type="submit" value="order" />
+}
+
