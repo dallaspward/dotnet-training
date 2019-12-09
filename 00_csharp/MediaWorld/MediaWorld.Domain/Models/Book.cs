@@ -1,4 +1,4 @@
-using MediaWorld.Domain.Abstracts;
+//using MediaWorld.Domain.Abstracts;
 using System;
 
 namespace MediaWorld.Domain.Models
