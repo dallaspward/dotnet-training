@@ -18,4 +18,8 @@ stages:
         pool:
           vmImage: ubuntu-18.04
         steps:
-          - script: dotnet test 3_devops/Devops.sln --collect "XPlat Code Coverage"
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: test
+              projects: '3_devops/Devops.sln'
+              arguments: '--collect "XPlat Code Coverage"'
