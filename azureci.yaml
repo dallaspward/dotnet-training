@@ -33,7 +33,7 @@ stages:
         pool:
           vmImage: ubuntu-18.04
         steps:
-          - task: DotnetClobalToolInstaller@0
+          - task: DotnetGlobalToolInstaller@0
             inputs:
               name: 'dotnet-sonarscanner'
           - script: | 
