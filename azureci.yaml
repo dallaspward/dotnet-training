@@ -21,12 +21,12 @@ stages:
           - task: DotNetCoreCLI@2
             inputs:
               command: test
-              projects: '3_devops/Devops.sln'
+              projects: 3_devops/Devops.sln
               arguments: '--collect "XPlat Code Coverage"'
           - task: PublishCodeCoverageResults@1
             inputs:
               codeCoverageTool: cobertura
-              summaryFileLocation: ./3_devops/TestResults/coverage.cobertura.xml
+              summaryFileLocation: '**/coverage.cobertura.xml'
   # - stage: analyze
   #   jobs:
   #     - job:
