@@ -40,7 +40,7 @@ stages:
               /d:sonar.host.url=https://sonarcloud.io/ \
               /d:sonar.cs.opencover.reportsPaths=**/TestResults/*/coverage.opencover.xml \
               /d:sonar.cs.vstest.reportsPaths=**/*.trx \              
-              /k:dallaspward_dotnet-training \
+              /k:'dallaspward_dotnet-training' \
               /o:dallaspward
               dotnet build 3_devops/Devops.sln
               dotnet test 3_devops/Devops.sln --logger trx
