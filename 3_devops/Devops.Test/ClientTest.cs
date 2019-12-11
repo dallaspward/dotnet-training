@@ -19,5 +19,19 @@ namespace Devops.Test
       //assent
       Assert.NotNull(index);
     }
+
+    [Fact]
+    
+    public void Test_PrivacyPage()
+    {
+      //arrange
+      var home = new HomeController(logger);
+
+      //act
+      var view = home.Privacy();
+
+      //assert
+      Assert.NotNull(view);
+    }
   }
 }

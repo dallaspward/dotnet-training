@@ -18,11 +18,7 @@ stages:
         pool:
           vmImage: ubuntu-18.04
         steps:
-          - task: DotNetCoreCLI@2
-            inputs:
-              command: test
-              projects: 3_devops/Devops.sln
-              arguments: '--collect:"XPlat Code Coverage"'
+          - script: dotnet test 3_devops/Devops.sln --logger trx --collect:"XPlat Code Coverage"
           - task: PublishCodeCoverageResults@1
             inputs:
               codeCoverageTool: cobertura
@@ -39,10 +35,16 @@ stages:
               version: '3.0.100'
           - script: dotnet tool install --global dotnet-sonarscanner
           - script: | 
-              dotnet sonarscanner begin /k:dotnet-training /d:sonar.login=$SONAR_LOGIN /d:sonar.host.url=https://sonarcloud.io /o:dallaspward
+              dotnet sonarscanner begin \
+              /d:sonar.login=$SONAR_LOGIN \
+              /d:sonar.host.url=https://sonarcloud.io \
+              /d:sonar.cs.opencover.reportPaths=**/TestResults/*/coverage.opencover.xml \
+              /d:sonar.cs.vstest.reportsPaths=**/*.trx \              
+              /k:dotnet-training \
+              /o:dallaspward
               dotnet build 3_devops/Devops.sln
-              dotnet test 3_devops/Devops.sln
-              dotnet sonarscanner end /d:sonar-login=$SONAR_LOGIN
+              dotnet test 3_devops/Devops.sln --logger trx
+              dotnet sonarscanner end /d:sonar.login=$SONAR_LOGIN
             env: 
               SONAR_LOGIN: $(SONAR_LOGIN)
   - stage: pack
