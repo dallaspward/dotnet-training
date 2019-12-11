@@ -33,9 +33,11 @@ stages:
         pool:
           vmImage: ubuntu-18.04
         steps:
-          - task: DotnetGlobalToolInstaller@0
+          - task: UseDotNet@2
             inputs:
-              name: 'dotnet-sonarscanner'
+              packageType: 'sdk'
+              version: '3.0.100'
+          - script: dotnet tool install --global dotnet-sonarscanner
           - script: | 
               dotnet sonarscanner begin /k:dotnet-training /d:sonar-login=$SONAR_LOGIN /o:dallaspward
               dotnet build 3_devops/Devops.sln
