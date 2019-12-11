@@ -40,7 +40,7 @@ stages:
               /d:sonar.host.url=https://sonarcloud.io/ \
               /d:sonar.cs.opencover.reportsPaths=**/TestResults/*/coverage.opencover.xml \
               /d:sonar.cs.vstest.reportsPaths=**/*.trx \              
-              /k:dotnet-training \
+              /k:dallaspward_dotnet-training \
               /o:dallaspward
               dotnet build 3_devops/Devops.sln
               dotnet test 3_devops/Devops.sln --logger trx
@@ -53,7 +53,7 @@ stages:
         pool:
           vmImage: ubuntu-18.04
         steps:
-          - script: docker image build -f 3_devops/dockerfile -t dallaspward/devops:$BUILD_NAME
+          - script: docker image build -f 3_devops/dockerfile -t dallaspward/devops:$BUILD_NAME ./3_devops
             env:
               BUILD_NAME: $(Build.DefinitionName)
           - script: docker login --username &DOCKER_USER --password $DOCKER_TOKEN
